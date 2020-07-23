@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+
+<div class="container" style="padding:1em">
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalProductos">Agregar Producto</button>
+            <br /><br>
+            <div class="table-responsive">
+                <table id="tblProductos">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Categoria</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <td>Accion</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="modalProductos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalProdTitle">Nuevo Producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <input hidden="hidden" id="IdProd" />
+            <div class="modal-body">
+                <form id="formProd">
+                    <div class="form-group">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" class="form-control" name="nombre" id="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoria: </label>
+                        <input type="text" class="form-control" name="categoria" id="categoria">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción: </label>
+                        <input type="text" class="form-control" name="descripcion" id="descripcion">
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio: </label>
+                        <input type="number" class="form-control" name="precio" id="precio">
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad: </label>
+                        <input type="number" class="form-control" name="cantidad" id="cantidad">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="saveData">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    @Scripts.Render("~/bundles/scripts")
+}
